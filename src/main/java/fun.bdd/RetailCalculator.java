@@ -1,8 +1,8 @@
 package fun.bdd;
 
 public class RetailCalculator {
-    double price;
-    private int numberOfItems;
+    double price = 0.0;
+    private int numberOfItems = 0;
 
     public void setPrice(double price) {
         this.price = price;
@@ -20,6 +20,10 @@ public class RetailCalculator {
     }
 
     public int getNumberOfItems() {
-        return 2;
+        return numberOfItems;
+    }
+
+    public Double getOrderValue() {
+        return numberOfItems * price;
     }
 }

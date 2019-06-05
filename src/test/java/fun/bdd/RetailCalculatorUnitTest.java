@@ -47,4 +47,9 @@ public class RetailCalculatorUnitTest {
             Assert.assertEquals("Number of items must be greater than zero", iae.getMessage());
         }
     }
+
+    @Test
+    public void should_handle_get_order_value_error_when_price_or_number_of_items_is_not_set() {
+
+    }
 }

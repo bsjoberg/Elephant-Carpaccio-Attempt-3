@@ -34,20 +34,21 @@ public class Stepdefs {
 
     @When("I have {int} item")
     public void i_have_item(Integer numberOfItems) {
-        // Write code here that turns the phrase above into concrete actions
-        throw new cucumber.api.PendingException();
+        try {
+            retailCalculator.setNumberOfItems(numberOfItems);
+        } catch (InvalidArgumentException e) {
+            e.printStackTrace();
+        }
     }
 
     @When("the item price is ${double}")
     public void the_item_price_is_$(Double price) {
-        // Write code here that turns the phrase above into concrete actions
-        throw new cucumber.api.PendingException();
+        retailCalculator.setPrice(price);
     }
 
     @Then("my order value is ${double}")
-    public void my_order_value_is_$(Double double1) {
-        // Write code here that turns the phrase above into concrete actions
-        throw new cucumber.api.PendingException();
+    public void my_order_value_is_$(Double orderValue) {
+        Assert.assertEquals(orderValue, retailCalculator.getOrderValue());
     }
 
 }
