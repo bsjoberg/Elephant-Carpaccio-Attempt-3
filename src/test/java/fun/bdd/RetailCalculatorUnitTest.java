@@ -26,7 +26,12 @@ public class RetailCalculatorUnitTest {
 
     @Test
     public void should_accept_number_of_items_greater_than_zero() {
-
+        try {
+            retailCalculator.setNumberOfItems(2);
+        } catch (InvalidArgumentException e) {
+            e.printStackTrace();
+        }
+        Assert.assertEquals(2, retailCalculator.getNumberOfItems());
     }
 
     @Test
@@ -36,6 +41,10 @@ public class RetailCalculatorUnitTest {
 
     @Test
     public void should_not_accept_number_of_items_less_than_1() {
-
+        try {
+            retailCalculator.setNumberOfItems(0);
+        } catch (InvalidArgumentException iae) {
+            Assert.assertEquals("Number of items must be greater than zero", iae.getMessage());
+        }
     }
 }
