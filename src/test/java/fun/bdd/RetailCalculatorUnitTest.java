@@ -14,7 +14,7 @@ public class RetailCalculatorUnitTest {
 
     @Test
     public void should_accept_price_as_double() {
-        retailCalculator.setPrice(10.20);
+        retailCalculator.setPrice(10.10);
         Assert.assertEquals(10.1, retailCalculator.getPrice(), 0);
     }
 
