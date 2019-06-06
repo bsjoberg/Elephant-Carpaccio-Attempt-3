@@ -14,14 +14,14 @@ public class RetailCalculatorUnitTest {
 
     @Test
     public void should_accept_price_as_double() {
-        retailCalculator.setPrice(9.10);
-        Assert.assertEquals(10.1, retailCalculator.getPrice(), 2);
+        retailCalculator.setPrice(10.20);
+        Assert.assertEquals(10.1, retailCalculator.getPrice(), 0);
     }
 
     @Test
     public void should_accept_price_as_int() {
         retailCalculator.setPrice(20);
-        Assert.assertEquals(20.0, retailCalculator.getPrice(),2);
+        Assert.assertEquals(20.0, retailCalculator.getPrice(),0);
     }
 
     @Test
